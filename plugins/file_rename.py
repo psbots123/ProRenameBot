@@ -107,7 +107,9 @@ async def doc(bot, update):
         if metadata:
 
             await ms.edit("I Fᴏᴜɴᴅ Yᴏᴜʀ Mᴇᴛᴀᴅᴀᴛᴀ\n\n__**Aᴅᴅɪɴɢ Mᴇᴛᴀᴅᴀᴛᴀ Tᴏ Fɪʟᴇ....**")
-            cmd = f"""ffmpeg -i "{path}" {metadata} "{metadata_path}" """
+            #cmd = f"""ffmpeg -i "{path}" {metadata} "{metadata_path}" """
+            cmd = f"""ffmpeg -y -i "{path}" {metadata} "{metadata_path}" """
+
 
             process = await asyncio.create_subprocess_shell(
                 cmd, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE
